@@ -50,9 +50,7 @@ export default function () {
     };
 
     sortTags(tags)
-      .filter(
-        (tag) => tag.position() !== null && (!tag.isChild() || (currentTag && (tag.parent() === currentTag || tag.parent() === currentTag.parent())))
-      )
+      .filter((tag) => tag.position() !== null)
       .forEach(addTag);
 
     const more = tags.filter((tag) => tag.position() === null).sort((a, b) => b.discussionCount() - a.discussionCount());
